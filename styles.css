@@ -1,0 +1,91 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Open Sans', sans-serif;  /* Google Font */
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0 2rem;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #0e76a8;
+    color: white;
+}
+
+header img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #0e76a8;
+    color: white;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Anchor Links */
+a:link, a:visited {
+    color: #0e76a8;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #005c99;
+    text-decoration: underline;
+}

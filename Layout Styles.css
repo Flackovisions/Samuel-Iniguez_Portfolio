@@ -1,0 +1,13 @@
+.header, .nav, .footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.main .row {
+  width: 90%;
+  margin: auto;
+  padding: 15px;
+  background-color: #f9f9f9;
+}

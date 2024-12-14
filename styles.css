@@ -89,3 +89,59 @@ a:hover, a:focus {
     color: #005c99;
     text-decoration: underline;
 }
+/* Existing CSS Code */
+
+/* About Me Table Styles */
+.about-me table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+  }
+  
+  .about-me th, .about-me td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .about-me th {
+    background-color: #f4f4f4;
+  }
+  
+  /* Gallery Columns */
+  .gallery {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  /* Contact Me Rows */
+  .contact .row {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #e8e8e8;
+    text-align: center;
+  }
+  
+  /* Homepage Sections */
+  .header, .nav, .footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+  }
+  
+  .main .row {
+    width: 90%;
+    margin: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+  }
+  

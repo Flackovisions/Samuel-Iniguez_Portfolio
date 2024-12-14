@@ -1,0 +1,15 @@
+.about-me table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.about-me th, .about-me td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.about-me th {
+  background-color: #f4f4f4;
+}

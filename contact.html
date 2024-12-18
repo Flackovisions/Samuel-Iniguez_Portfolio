@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Contact Me</h1>
-    <form method="post" action="response_page.php">
+    <form id="contactForm">
         <fieldset>
             <legend>Contact Information</legend>
             
@@ -43,6 +43,19 @@
             <input type="submit" value="Submit">
         </fieldset>
     </form>
+
+    <div id="responseMessage" style="display:none; margin-top:20px;">
+        <h2>Thank You for Your Submission!</h2>
+        <p>Your form has been submitted successfully.</p>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById("contactForm").style.display = "none";
+            document.getElementById("responseMessage").style.display = "block";
+        });
+    </script>
 </body>
 </html>
 

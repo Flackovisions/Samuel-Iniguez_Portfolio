@@ -46,15 +46,3 @@
 </body>
 </html>
 
-<!-- response_page.php -->
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    foreach ($_POST as $key => $value) {
-        echo htmlspecialchars($key) . ": " . htmlspecialchars($value) . "<br/>";
-    }
-} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-    foreach ($_GET as $key => $value) {
-        echo htmlspecialchars($key) . ": " . htmlspecialchars($value) . "<br/>";
-    }
-}
-?>

@@ -3,32 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Samuel Iniguez Portfolio</title>
+    <title>Contact Me</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">Welcome to My Portfolio</header>
+    <h1>Contact Me</h1>
+    <form method="post" action="response_page.php">
+        <fieldset>
+            <legend>Contact Information</legend>
+            
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <h2>Contact Me</h2>
-        <div class="row">Email: samueliniguez5@gmail.com</div>
-        <div class="row">Phone: (559) 707-0975</div>
-        <div class="row">LinkedIn: <a href="#">linkedin.com/in/samueliniguez</a></div>
-    </main>
+            <label for="message">Your Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-    <!-- Footer -->
-    <footer class="footer">&copy; 2024 Samuel Iniguez. All Rights Reserved.</footer>
+            <label>Preferred Contact Method:</label><br>
+            <input type="radio" id="email_contact" name="contact_method" value="Email" required>
+            <label for="email_contact">Email</label><br>
+            
+            <input type="radio" id="phone_contact" name="contact_method" value="Phone" required>
+            <label for="phone_contact">Phone</label><br><br>
+
+            <label for="inquiry">Reason for Contact:</label><br>
+            <select id="inquiry" name="inquiry" required>
+                <option value="">--Please Choose an Option--</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Support Request</option>
+                <option value="feedback">Feedback</option>
+            </select><br><br>
+
+            <label>
+                <input type="checkbox" name="subscribe" value="yes"> Subscribe to our newsletter
+            </label><br><br>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
 </body>
 </html>
+
+<!-- response_page.php -->
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    foreach ($_POST as $key => $value) {
+        echo htmlspecialchars($key) . ": " . htmlspecialchars($value) . "<br/>";
+    }
+} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+    foreach ($_GET as $key => $value) {
+        echo htmlspecialchars($key) . ": " . htmlspecialchars($value) . "<br/>";
+    }
+}
+?>

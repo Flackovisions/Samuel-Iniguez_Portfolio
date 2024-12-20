@@ -7,55 +7,72 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Contact Me</h1>
-    <form id="contactForm">
-        <fieldset>
-            <legend>Contact Information</legend>
-            
-            <label for="name">Full Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+<!-- Navigation Menu -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+</nav>
 
-            <label for="message">Your Message:</label><br>
-            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+<h1>Contact Me</h1>
+<form id="contactForm">
+    <fieldset>
+        <legend>Contact Information</legend>
+        
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
 
-            <label>Preferred Contact Method:</label><br>
-            <input type="radio" id="email_contact" name="contact_method" value="Email" required>
-            <label for="email_contact">Email</label><br>
-            
-            <input type="radio" id="phone_contact" name="contact_method" value="Phone" required>
-            <label for="phone_contact">Phone</label><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-            <label for="inquiry">Reason for Contact:</label><br>
-            <select id="inquiry" name="inquiry" required>
-                <option value="">--Please Choose an Option--</option>
-                <option value="general">General Inquiry</option>
-                <option value="support">Support Request</option>
-                <option value="feedback">Feedback</option>
-            </select><br><br>
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-            <label>
-                <input type="checkbox" name="subscribe" value="yes"> Subscribe to our newsletter
-            </label><br><br>
+        <label>Preferred Contact Method:</label><br>
+        <input type="radio" id="email_contact" name="contact_method" value="Email" required>
+        <label for="email_contact">Email</label><br>
+        
+        <input type="radio" id="phone_contact" name="contact_method" value="Phone" required>
+        <label for="phone_contact">Phone</label><br><br>
 
-            <input type="submit" value="Submit">
-        </fieldset>
-    </form>
+        <label for="inquiry">Reason for Contact:</label><br>
+        <select id="inquiry" name="inquiry" required>
+            <option value="">--Please Choose an Option--</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Support Request</option>
+            <option value="feedback">Feedback</option>
+        </select><br><br>
 
-    <div id="responseMessage" style="display:none; margin-top:20px;">
-        <h2>Thank You for Your Submission!</h2>
-        <p>Your form has been submitted successfully.</p>
-    </div>
+        <label>
+            <input type="checkbox" name="subscribe" value="yes"> Subscribe to our newsletter
+        </label><br><br>
 
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-            document.getElementById("contactForm").style.display = "none";
-            document.getElementById("responseMessage").style.display = "block";
-        });
-    </script>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+<div id="responseMessage" style="display:none; margin-top:20px;">
+    <h2>Thank You for Your Submission!</h2>
+    <p>Your form has been submitted successfully.</p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Samuel Iniguez. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        document.getElementById("contactForm").style.display = "none";
+        document.getElementById("responseMessage").style.display = "block";
+    });
+</script>
+
 </body>
 </html>
-

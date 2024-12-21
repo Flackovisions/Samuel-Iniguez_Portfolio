@@ -7,65 +7,68 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <h1>Welcome to My Portfolio</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="invitation.html">Invitation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Navigation Menu -->
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="invitation.html">Invitation</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+    <!-- Main Content -->
+    <main>
+        <h2>Gallery</h2>
 
-<!-- Main Content -->
-<main>
-    <h2>Gallery</h2>
+        <section id="gallery">
+            <h2>Image Gallery</h2>
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><a href="photo1.jpg" target="_blank"><img src="photo1.jpg" alt="Sunset over a mountain landscape" width="200"></a></td>
+                    <td>Sunset over a mountain landscape</td>
+                </tr>
+                <tr>
+                    <td><a href="photo2.jpg" target="_blank"><img src="photo2.jpg" alt="Close-up of a blooming sunflower" width="200"></a></td>
+                    <td>Close-up of a blooming sunflower</td>
+                </tr>
+                <tr>
+                    <td><a href="photo3.jpg" target="_blank"><img src="photo3.jpg" alt="City skyline at night with illuminated buildings" width="200"></a></td>
+                    <td>City skyline at night with illuminated buildings</td>
+                </tr>
+            </table>
+        </section>
 
-    <section id="gallery">
-        <h2>Image Gallery</h2>
-        <table>
-            <tr>
-                <th>Image</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td><a href="photo1.jpg" target="_blank"><img src="photo1.jpg" alt="Sunset over a mountain landscape" width="200"></a></td>
-                <td>Sunset over a mountain landscape</td>
-            </tr>
-            <tr>
-                <td><a href="photo2.jpg" target="_blank"><img src="photo2.jpg" alt="Close-up of a blooming sunflower" width="200"></a></td>
-                <td>Close-up of a blooming sunflower</td>
-            </tr>
-            <tr>
-                <td><a href="photo3.jpg" target="_blank"><img src="photo3.jpg" alt="City skyline at night with illuminated buildings" width="200"></a></td>
-                <td>City skyline at night with illuminated buildings</td>
-            </tr>
-        </table>
-    </section>
+        <section id="video">
+            <h2>Video</h2>
+            <video controls>
+                <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+                <p>Your browser does not support the video tag.</p>
+            </video>
+        </section>
 
-    <section id="video">
-        <h2>Video</h2>
-        <video controls>
-            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
-            <p>Your browser does not support the video tag.</p>
-        </video>
-    </section>
+        <section id="audio">
+            <h2>Audio</h2>
+            <audio controls>
+                <source src="myAudio.mp3" type="audio/mpeg">
+                <p>Your browser does not support the audio tag.</p>
+            </audio>
+        </section>
+    </main>
 
-    <section id="audio">
-        <h2>Audio</h2>
-        <audio controls>
-            <source src="myAudio.mp3" type="audio/mpeg">
-            <p>Your browser does not support the audio tag.</p>
-        </audio>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2024 Samuel Iniguez. All Rights Reserved.</p>
-</footer>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Samuel Iniguez. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

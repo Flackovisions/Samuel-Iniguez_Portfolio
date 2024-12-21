@@ -1,53 +1,56 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Invitation Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Page | Samuel Iniguez Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="invitation.js"></script>
 </head>
-
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <h1>Welcome to My Portfolio</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="invitation.html">Invitation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <div class="top">
-        <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="invitation.html">Invitation</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- Main Content -->
+    <main>
+        <section id="pageForm">
+            <h2>Event Signup Form</h2>
+            <form action="#">
+                <label for="recipientNameInput">Recipient Name:</label>
+                <input type="text" name="recipientNameInput" id="recipientNameInput" placeholder="Enter your Recipient Name">
 
-<section id="pageForm">
-    <h2>Event Signup Form</h2>
-    <form action="#">
-        <label for="recipientNameInput">Recipient Name:</label>
-        <input type="text" name="recipientNameInput" id="recipientNameInput" placeholder="Enter your Recipient Name">
+                <label for="hostNameInput">Host Name:</label>
+                <input type="text" name="hostNameInput" id="hostNameInput" placeholder="Enter your Name">
 
-        <label for="hostNameInput">Host Name:</label>
-        <input type="text" name="hostNameInput" id="hostNameInput" placeholder="Enter your Name">
+                <input type="submit" value="Submit" onclick="replaceContent();return false;">
+            </form>
+        </section>
 
-        <input type="submit" value="Submit" onclick="replaceContent();return false;">
-    </form>
-</section>
+        <article id="placeholderContent">
+            <h2>Invitation Details</h2>
+            <p>Hello <span id="recipientNamePlaceholder">recipientName</span>!</p>
+            <p>You have been invited to volunteer for an event held on July 1st. Please respond to this email to sign up as a volunteer.</p>
+            <p>Thanks!</p>
+            <p><span id="hostNamePlaceholder">hostName</span></p>
+        </article>
+    </main>
 
-<article id="placeholderContent">
-    <h2>Invitation Details</h2>
-    <p>Hello <span id="recipientNamePlaceholder">recipientName</span>!</p>
-    <p>You have been invited to volunteer for an event held on July 1st. Please respond to this email to sign up as a volunteer.</p>
-    <p>Thanks!</p>
-    <p><span id="hostNamePlaceholder">hostName</span></p>
-</article>
-
-<footer>This events site is for IT3515 tasks.</footer>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Samuel Iniguez. All Rights Reserved.</p>
+    </footer>
 </body>
-
 </html>

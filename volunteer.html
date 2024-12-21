@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteers | Samuel Iniguez Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="volunteers.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">Welcome to My Portfolio</header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="invitation.html">Invitation</a></li>
+            <li><a href="volunteer.html" class="active">Volunteers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Manage Volunteers</h1>
+        <p>Welcome to the Volunteer Management section. Add, delete, or organize your list of volunteers below:</p>
+
+        <section class="volunteer-section">
+            <form id="volunteerForm">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" placeholder="Enter first name" required>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" placeholder="Enter last name" required>
+
+                <button type="button" id="add_button">Add Volunteer</button>
+                <button type="button" id="delete_button">Delete Volunteer</button>
+                <button type="button" id="clear_button">Clear Volunteers</button>
+                <button type="button" id="sort_button">Sort by First Name</button>
+            </form>
+
+            <h2>Volunteer List</h2>
+            <textarea id="volunteerList" rows="10" cols="60" readonly></textarea>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">&copy; 2024 Samuel Iniguez. All Rights Reserved.</footer>
+</body>
+</html>

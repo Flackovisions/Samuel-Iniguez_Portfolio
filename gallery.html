@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Samuel Iniguez Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -29,22 +29,23 @@
         <h2>Gallery</h2>
 
         <section id="gallery">
-            <h2>Image Gallery</h2>
+            <h2>Interactive Image Gallery</h2>
+            <p>This gallery features rollover functionality for images and preloading to improve performance.</p>
             <table>
                 <tr>
                     <th>Image</th>
                     <th>Description</th>
                 </tr>
                 <tr>
-                    <td><a href="photo1.jpg" target="_blank"><img src="photo1.jpg" alt="Sunset over a mountain landscape" width="200"></a></td>
+                    <td><a href="images/full1.jpg" target="_blank"><img src="images/thumb1.jpg" alt="Sunset over a mountain landscape" width="200"></a></td>
                     <td>Sunset over a mountain landscape</td>
                 </tr>
                 <tr>
-                    <td><a href="photo2.jpg" target="_blank"><img src="photo2.jpg" alt="Close-up of a blooming sunflower" width="200"></a></td>
+                    <td><a href="images/full2.jpg" target="_blank"><img src="images/thumb2.jpg" alt="Close-up of a blooming sunflower" width="200"></a></td>
                     <td>Close-up of a blooming sunflower</td>
                 </tr>
                 <tr>
-                    <td><a href="photo3.jpg" target="_blank"><img src="photo3.jpg" alt="City skyline at night with illuminated buildings" width="200"></a></td>
+                    <td><a href="images/full3.jpg" target="_blank"><img src="images/thumb3.jpg" alt="City skyline at night with illuminated buildings" width="200"></a></td>
                     <td>City skyline at night with illuminated buildings</td>
                 </tr>
             </table>
@@ -71,5 +72,31 @@
     <footer class="footer">
         <p>&copy; 2024 Samuel Iniguez. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript Section for Gallery Enhancements -->
+    <script>
+        // Preload Gallery Images
+        const imagesToPreload = ["images/full1.jpg", "images/full2.jpg", "images/full3.jpg"];
+
+        function preloadImages(images) {
+            images.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        preloadImages(imagesToPreload);
+
+        // Rollover Functionality
+        const thumbnails = document.querySelectorAll("#gallery img");
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener("mouseover", () => {
+                thumbnail.style.border = "3px solid blue";
+            });
+            thumbnail.addEventListener("mouseout", () => {
+                thumbnail.style.border = "none";
+            });
+        });
+    </script>
 </body>
 </html>

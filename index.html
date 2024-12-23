@@ -10,11 +10,11 @@
     <!-- Header -->
     <header>
         <h1 class="header">Welcome to My Portfolio</h1>
-        <img id="banner" src="images/banner1.jpg" alt="Cycling Banner">
+        <img id="banner" src="images/banner1.jpg" alt="Cycling through featured projects">
     </header>
 
     <!-- Navigation -->
-    <nav>
+    <nav aria-label="Main Navigation">
         <ul class="nav">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About Me</a></li>
@@ -85,15 +85,18 @@
 
     <!-- Cycling Banner Script -->
     <script>
-        const bannerImages = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
-        let currentBanner = 0;
+        document.addEventListener("DOMContentLoaded", () => {
+            const bannerImages = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
+            let currentBanner = 0;
 
-        function cycleBanner() {
-            currentBanner = (currentBanner + 1) % bannerImages.length;
-            document.getElementById("banner").src = bannerImages[currentBanner];
-        }
+            function cycleBanner() {
+                currentBanner = (currentBanner + 1) % bannerImages.length;
+                console.log(`Banner changed to: ${bannerImages[currentBanner]}`); // Debug log
+                document.getElementById("banner").src = bannerImages[currentBanner];
+            }
 
-        setInterval(cycleBanner, 3000);
+            setInterval(cycleBanner, 3000); // Change banner every 3 seconds
+        });
     </script>
 </body>
 </html>

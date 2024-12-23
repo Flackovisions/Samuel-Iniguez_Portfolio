@@ -85,17 +85,36 @@
 
     <!-- Cycling Banner Script -->
     <script>
+        /**
+         * Function to preload images into the browser cache.
+         * @param {string[]} images - Array of image URLs to preload.
+         */
+        function preloadImages(images) {
+            images.forEach((src) => {
+                const img = new Image();
+                img.src = src; // Preload image into browser memory
+            });
+        }
+
+        /**
+         * Function to cycle through banner images at a fixed interval.
+         * @param {string[]} images - Array of image URLs.
+         * @param {string} elementId - ID of the <img> element to update.
+         * @param {number} interval - Time interval in milliseconds.
+         */
+        function cycleBanner(images, elementId, interval) {
+            let currentIndex = 0; // Start with the first image
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+                document.getElementById(elementId).src = images[currentIndex];
+            }, interval);
+        }
+
+        // Initialize the page functionality
         document.addEventListener("DOMContentLoaded", () => {
             const bannerImages = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
-            let currentBanner = 0;
-
-            function cycleBanner() {
-                currentBanner = (currentBanner + 1) % bannerImages.length;
-                console.log(`Banner changed to: ${bannerImages[currentBanner]}`); // Debug log
-                document.getElementById("banner").src = bannerImages[currentBanner];
-            }
-
-            setInterval(cycleBanner, 3000); // Change banner every 3 seconds
+            preloadImages(bannerImages); // Preload banner images
+            cycleBanner(bannerImages, "banner", 3000); // Start cycling the banner every 3 seconds
         });
     </script>
 </body>

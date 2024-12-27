@@ -10,7 +10,7 @@
     <!-- Header -->
     <header>
         <h1 class="header">Welcome to My Portfolio</h1>
-        <img id="banner" src="images/banner1.jpg" alt="Cycling through featured projects">
+        <img id="banner" src="banner1.jpg" alt="Cycling through featured projects">
     </header>
 
     <!-- Navigation -->
@@ -112,7 +112,7 @@
 
         // Initialize the page functionality
         document.addEventListener("DOMContentLoaded", () => {
-            const bannerImages = ["images/banner1.jpg", "images/banner2.jpg", "images/banner3.jpg"];
+            const bannerImages = ["banner1.jpg", "banner2.jpg", "banner3.jpg"];
             preloadImages(bannerImages); // Preload banner images
             cycleBanner(bannerImages, "banner", 3000); // Start cycling the banner every 3 seconds
         });

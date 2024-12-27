@@ -71,19 +71,18 @@
 
     <!-- Main Content -->
     <main>
-        <h2>Image Gallery</h2>
         <section id="gallery">
-            <img src="images/photo1.jpg" alt="Volunteer Today" data-full="images/full1.jpg">
-            <img src="images/photo2.jpg" alt="Join Us at Our Next Event" data-full="images/full2.jpg">
-            <img src="images/photo3.jpg" alt="Coffee Is On Us" data-full="images/full3.jpg">
+            <h2>Image Gallery</h2>
+            <img src="photo1.jpg" alt="Volunteer Today" data-full="full1.jpg">
+            <img src="photo2.jpg" alt="Join Us at Our Next Event" data-full="full2.jpg">
+            <img src="photo3.jpg" alt="Coffee Is On Us" data-full="full3.jpg">
         </section>
 
         <!-- Video Section -->
         <div class="media-section">
             <h2>Featured Video</h2>
             <video controls>
-                <source src="images/original-video.mp4" type="video/mp4">
-                <source src="images/original-video.webm" type="video/webm">
+                <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -92,8 +91,7 @@
         <div class="media-section">
             <h2>Featured Audio</h2>
             <audio controls>
-                <source src="images/original-audio.mp3" type="audio/mpeg">
-                <source src="images/original-audio.ogg" type="audio/ogg">
+                <source src="myAudio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -140,9 +138,9 @@
         // Initialize gallery functionality
         document.addEventListener("DOMContentLoaded", () => {
             const galleryImages = [
-                "images/full1.jpg",
-                "images/full2.jpg",
-                "images/full3.jpg"
+                "full1.jpg",
+                "full2.jpg",
+                "full3.jpg"
             ];
 
             preloadImages(galleryImages); // Preload full-size images

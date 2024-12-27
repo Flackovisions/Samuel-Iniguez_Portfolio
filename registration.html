@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page | Samuel Iniguez Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+            let isValid = true;
+            let firstErrorField = null;
+
+            // Clear previous error messages
+            const errorElements = document.querySelectorAll(".error");
+            errorElements.forEach((el) => el.textContent = "");
+
+            // Username validation
+            const username = document.querySelector('input[name="userName"]');
+            if (!/^[a-zA-Z0-9]+$/.test(username.value)) {
+                showError(username, "Username must only contain letters and numbers.");
+                isValid = false;
+                firstErrorField = firstErrorField || username;
+            }
+
+            // Password validation
+            const password = document.querySelector('input[name="password"]');
+            if (password.value.length < 8) {
+                showError(password, "Password must be at least 8 characters.");
+                isValid = false;
+                firstErrorField = firstErrorField || password;
+            }
+
+            // Password verify validation
+            const passwordVerify = document.querySelector('input[name="passwordVerify"]');
+            if (passwordVerify.value !== password.value) {
+                showError(passwordVerify, "Passwords do not match.");
+                isValid = false;
+                firstErrorField = firstErrorField || passwordVerify;
+            }
+
+            // First name validation
+            const firstName = document.querySelector('input[name="firstName"]');
+            if (!firstName.value.trim()) {
+                showError(firstName, "First name is required.");
+                isValid = false;
+                firstErrorField = firstErrorField || firstName;
+            }
+
+            // Last name validation
+            const lastName = document.querySelector('input[name="lastName"]');
+            if (!lastName.value.trim()) {
+                showError(lastName, "Last name is required.");
+                isValid = false;
+                firstErrorField = firstErrorField || lastName;
+            }
+
+            // Email validation
+            const email = document.querySelector('input[name="email"]');
+            if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                showError(email, "Email must be in the format xxx@xxx.xxx.");
+                isValid = false;
+                firstErrorField = firstErrorField || email;
+            }
+
+            // Phone number validation
+            const phoneNumber = document.querySelector('input[name="phoneNumber"]');
+            if (phoneNumber.value && !/^\(\d{3}\) \d{3}-\d{4}$/.test(phoneNumber.value)) {
+                showError(phoneNumber, "Phone number must be in the format (xxx) xxx-xxxx.");
+                isValid = false;
+                firstErrorField = firstErrorField || phoneNumber;
+            }
+
+            // Focus on the first erroneous field
+            if (firstErrorField) {
+                firstErrorField.focus();
+            }
+
+            // If form is valid, proceed to the next step
+            if (isValid) {
+                alert("Form submitted successfully!");
+                window.location.href = "confirmation.php"; // Redirect to confirmation page
+            }
+        }
+
+        function showError(input, message) {
+            let errorElement = input.nextElementSibling;
+            if (!errorElement || !errorElement.classList.contains("error")) {
+                errorElement = document.createElement("span");
+                errorElement.className = "error";
+                input.parentNode.insertBefore(errorElement, input.nextSibling);
+            }
+            errorElement.textContent = message;
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <h1>Welcome to My Portfolio</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="invitation.html">Invitation</a></li>
+                <li><a href="volunteer.html">Volunteers</a></li>
+                <li><a href="registration.html" class="active">Registration</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="pageForm">
+            <h2>Registration Form</h2>
+            <form onsubmit="validateForm(event)">
+                <label for="userName">Username:</label>
+                <input type="text" name="userName" placeholder="Enter your Username">
+                <br><br>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Enter your Password">
+                <br><br>
+
+                <label for="passwordVerify">Verify Password:</label>
+                <input type="password" name="passwordVerify" placeholder="Enter your Password again">
+                <br><br>
+
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" placeholder="Enter your First Name">
+                <br><br>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" placeholder="Enter your Last Name">
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Enter your Email">
+                <br><br>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" name="phoneNumber" placeholder="Enter your Phone Number">
+                <br><br>
+
+                <label>Sign Up for Newsletter:</label>
+                <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
+                <input type="radio" name="signUpNewsletter" value="No"> No
+                <br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Samuel Iniguez. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

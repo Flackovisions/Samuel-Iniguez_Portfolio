@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Samuel Iniguez Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Styling for the gallery layout */
         #gallery {
@@ -59,12 +59,12 @@
         <h1>Gallery</h1>
         <nav>
             <ul class="nav">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About Me</a></li>
-                <li><a href="./gallery.html" class="active">Gallery</a></li>
-                <li><a href="./invitation.html">Invitation</a></li>
-                <li><a href="./volunteer.html">Volunteers</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="invitation.html">Invitation</a></li>
+                <li><a href="volunteer.html">Volunteers</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -73,17 +73,17 @@
     <main>
         <h2>Image Gallery</h2>
         <section id="gallery">
-            <img src="./images/photo1.jpg" alt="Volunteer Today" data-full="./images/full1.jpg">
-            <img src="./images/photo2.jpg" alt="Join Us at Our Next Event" data-full="./images/full2.jpg">
-            <img src="./images/photo3.jpg" alt="Coffee Is On Us" data-full="./images/full3.jpg">
+            <img src="images/photo1.jpg" alt="Volunteer Today" data-full="images/full1.jpg">
+            <img src="images/photo2.jpg" alt="Join Us at Our Next Event" data-full="images/full2.jpg">
+            <img src="images/photo3.jpg" alt="Coffee Is On Us" data-full="images/full3.jpg">
         </section>
 
         <!-- Video Section -->
         <div class="media-section">
             <h2>Featured Video</h2>
             <video controls>
-                <source src="./media/original-video.mp4" type="video/mp4">
-                <source src="./media/original-video.webm" type="video/webm">
+                <source src="images/original-video.mp4" type="video/mp4">
+                <source src="images/original-video.webm" type="video/webm">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -92,8 +92,8 @@
         <div class="media-section">
             <h2>Featured Audio</h2>
             <audio controls>
-                <source src="./media/original-audio.mp3" type="audio/mpeg">
-                <source src="./media/original-audio.ogg" type="audio/ogg">
+                <source src="images/original-audio.mp3" type="audio/mpeg">
+                <source src="images/original-audio.ogg" type="audio/ogg">
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -140,9 +140,9 @@
         // Initialize gallery functionality
         document.addEventListener("DOMContentLoaded", () => {
             const galleryImages = [
-                "./images/full1.jpg",
-                "./images/full2.jpg",
-                "./images/full3.jpg"
+                "images/full1.jpg",
+                "images/full2.jpg",
+                "images/full3.jpg"
             ];
 
             preloadImages(galleryImages); // Preload full-size images

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Samuel Iniguez Portfolio</title>
-    <link rel="stylesheet" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Adjusted path for CSS -->
     <style>
         /* Styling for the gallery layout */
         #gallery {
@@ -27,6 +27,18 @@
         #gallery img:hover {
             transform: scale(1.1);
             border-color: #444;
+        }
+
+        /* Video and audio styling */
+        .media-section {
+            margin: 40px auto;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .media-section video, .media-section audio {
+            max-width: 100%;
+            margin: 20px 0;
         }
 
         /* Responsive design for smaller screens */
@@ -65,6 +77,26 @@
             <img src="./images/photo2.jpg" alt="Join Us at Our Next Event" data-full="./images/full2.jpg">
             <img src="./images/photo3.jpg" alt="Coffee Is On Us" data-full="./images/full3.jpg">
         </section>
+
+        <!-- Video Section -->
+        <div class="media-section">
+            <h2>Featured Video</h2>
+            <video controls>
+                <source src="./media/original-video.mp4" type="video/mp4">
+                <source src="./media/original-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Audio Section -->
+        <div class="media-section">
+            <h2>Featured Audio</h2>
+            <audio controls>
+                <source src="./media/original-audio.mp3" type="audio/mpeg">
+                <source src="./media/original-audio.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </main>
 
     <!-- Footer -->

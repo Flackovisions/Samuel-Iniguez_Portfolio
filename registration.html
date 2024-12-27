@@ -16,7 +16,7 @@
             errorElements.forEach((el) => el.textContent = "");
 
             // Username validation
-            const username = document.querySelector('input[name="userName"]');
+            const username = document.querySelector('#userName');
             if (!/^[a-zA-Z0-9]+$/.test(username.value)) {
                 showError(username, "Username must only contain letters and numbers.");
                 isValid = false;
@@ -24,7 +24,7 @@
             }
 
             // Password validation
-            const password = document.querySelector('input[name="password"]');
+            const password = document.querySelector('#password');
             if (password.value.length < 8) {
                 showError(password, "Password must be at least 8 characters.");
                 isValid = false;
@@ -32,7 +32,7 @@
             }
 
             // Password verify validation
-            const passwordVerify = document.querySelector('input[name="passwordVerify"]');
+            const passwordVerify = document.querySelector('#passwordVerify');
             if (passwordVerify.value !== password.value) {
                 showError(passwordVerify, "Passwords do not match.");
                 isValid = false;
@@ -40,7 +40,7 @@
             }
 
             // First name validation
-            const firstName = document.querySelector('input[name="firstName"]');
+            const firstName = document.querySelector('#firstName');
             if (!firstName.value.trim()) {
                 showError(firstName, "First name is required.");
                 isValid = false;
@@ -48,7 +48,7 @@
             }
 
             // Last name validation
-            const lastName = document.querySelector('input[name="lastName"]');
+            const lastName = document.querySelector('#lastName');
             if (!lastName.value.trim()) {
                 showError(lastName, "Last name is required.");
                 isValid = false;
@@ -56,7 +56,7 @@
             }
 
             // Email validation
-            const email = document.querySelector('input[name="email"]');
+            const email = document.querySelector('#email');
             if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
                 showError(email, "Email must be in the format xxx@xxx.xxx.");
                 isValid = false;
@@ -64,7 +64,7 @@
             }
 
             // Phone number validation
-            const phoneNumber = document.querySelector('input[name="phoneNumber"]');
+            const phoneNumber = document.querySelector('#phoneNumber');
             if (phoneNumber.value && !/^\(\d{3}\) \d{3}-\d{4}$/.test(phoneNumber.value)) {
                 showError(phoneNumber, "Phone number must be in the format (xxx) xxx-xxxx.");
                 isValid = false;
@@ -79,7 +79,7 @@
             // If form is valid, proceed to the next step
             if (isValid) {
                 alert("Form submitted successfully!");
-                window.location.href = "confirmation.php"; // Redirect to confirmation page
+                window.location.href = "confirmation.html"; // Redirect to confirmation page
             }
         }
 
@@ -93,6 +93,13 @@
             errorElement.textContent = message;
         }
     </script>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -119,36 +126,38 @@
             <h2>Registration Form</h2>
             <form onsubmit="validateForm(event)">
                 <label for="userName">Username:</label>
-                <input type="text" name="userName" placeholder="Enter your Username">
+                <input type="text" id="userName" name="userName" placeholder="Enter your Username">
                 <br><br>
 
                 <label for="password">Password:</label>
-                <input type="password" name="password" placeholder="Enter your Password">
+                <input type="password" id="password" name="password" placeholder="Enter your Password">
                 <br><br>
 
                 <label for="passwordVerify">Verify Password:</label>
-                <input type="password" name="passwordVerify" placeholder="Enter your Password again">
+                <input type="password" id="passwordVerify" name="passwordVerify" placeholder="Enter your Password again">
                 <br><br>
 
                 <label for="firstName">First Name:</label>
-                <input type="text" name="firstName" placeholder="Enter your First Name">
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name">
                 <br><br>
 
                 <label for="lastName">Last Name:</label>
-                <input type="text" name="lastName" placeholder="Enter your Last Name">
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name">
                 <br><br>
 
                 <label for="email">Email:</label>
-                <input type="text" name="email" placeholder="Enter your Email">
+                <input type="text" id="email" name="email" placeholder="Enter your Email">
                 <br><br>
 
                 <label for="phoneNumber">Phone Number:</label>
-                <input type="text" name="phoneNumber" placeholder="Enter your Phone Number">
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g., (123) 456-7890">
                 <br><br>
 
                 <label>Sign Up for Newsletter:</label>
-                <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
-                <input type="radio" name="signUpNewsletter" value="No"> No
+                <input type="radio" id="newsletterYes" name="signUpNewsletter" value="Yes" checked>
+                <label for="newsletterYes">Yes</label>
+                <input type="radio" id="newsletterNo" name="signUpNewsletter" value="No">
+                <label for="newsletterNo">No</label>
                 <br><br>
 
                 <input type="submit" value="Submit">

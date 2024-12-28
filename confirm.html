@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Registration</title>
+    <script>
+        // Parse query string and save data to cookies
+        function saveDataToCookies() {
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.forEach((value, key) => {
+                document.cookie = `${key}=${value}; path=/;`;
+            });
+        }
+
+        // Read data from cookies
+        function getDataFromCookies() {
+            const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+                const [key, value] = cookie.split('=');
+                acc[key] = decodeURIComponent(value);
+                return acc;
+            }, {});
+
+            return cookies;
+        }
+
+        // Display data on the page
+        function displayData() {
+            const data = getDataFromCookies();
+            const displayArea = document.getElementById('displayArea');
+
+            displayArea.innerHTML = '';
+            for (const key in data) {
+                const p = document.createElement('p');
+                p.textContent = `${key}: ${data[key]}`;
+                displayArea.appendChild(p);
+            }
+        }
+
+        // Initialize the page
+        function init() {
+            saveDataToCookies();
+            displayData();
+        }
+    </script>
+</head>
+<body onload="init()">
+    <h1>Confirmation Page</h1>
+    <div id="displayArea"></div>
+    <button onclick="location.href='registration.html'">Go Back</button>
+</body>
+</html>

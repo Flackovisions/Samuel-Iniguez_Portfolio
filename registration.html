@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,8 +77,12 @@
 
             // If form is valid, proceed to the next step
             if (isValid) {
-                alert("Form submitted successfully!");
-                window.location.href = "confirmation.html"; // Redirect to confirmation page
+                // Collect form data into query string
+                const formData = new FormData(document.querySelector('form'));
+                const queryString = new URLSearchParams(formData).toString();
+
+                // Redirect to confirmation page with query string
+                window.location.href = `confirm.html?${queryString}`;
             }
         }
 
